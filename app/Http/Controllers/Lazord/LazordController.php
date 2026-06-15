@@ -48,33 +48,34 @@ class LazordController extends Controller
 
 
     private function getFaqs()
-{
-    return [
-        [
-            'question' => 'ما هو لازورد',
-            'answer' => 'لازورد هو مختبر الأسنان الرقمي الرائد الذي يتيح لعيادات طب الأسنان التواصل الفوري مع المختبر وتتبع الحالات وإتمام الطلبات بشكل رقمي بالكامل.'
-        ],
-        [
-            'question' => 'ما هي فوائد طب الأسنان الرقمي',
-            'answer' => 'يوفر طب الأسنان الرقمي دقة أعلى في التصاميم، وأوقات تسليم أسرع، وتحسين التواصل بين العيادة والمختبر، وتجربة أفضل للمريض.'
-        ],
-        [
-            'question' => 'ما هي مختبر الأسنان الرقمي',
-            'answer' => 'مختبر الأسنان الرقمي هو مرفق متخصص يستخدم أحدث التقنيات الرقمية مثل طباعة ثلاثية الأبعاد والتصميم الحاسوبي لإنتاج ترميمات أسنان عالية الجودة.'
-        ],
-        [
-            'question' => 'ما هي سير العمل المبتكرة التي تقدمها لازورد',
-            'answer' => 'تقدم لازورد سير عمل رقمية متكاملة تشمل المسح الضوئي، والتصميم الرقمي، والموافقة عبر الإنترنت، وتتبع الحالات في الوقت الفعلي.'
-        ],
-        [
-    'question' => 'ما هي منتجات مختبر الأسنان التي تقدمها لازورد',
-    'answer' => 'تقدم لازورد مجموعة واسعة من المنتجات تشمل تيجان الزركونيا، وحلول رعاية الأسنان الشاملة، وأطقم الأسنان ذات الموعد الثاني، وأجهزة علاج انقطاع التنفس، وتقويم الأسنان الشفاف، والواليات الليلية المطبوعة بتقنية ثلاثية الأبعاد.'
-  ],
-  [
-    'question' => 'كيف يتم مقارنة لازورد مع مختبرات الأسنان الأخرى',
-    'answer' => 'تتميز لازورد بتقديم نظام رقمي متكامل، وسرعة تسليم لا مثيل لها، ودعم متخصص على مدار الساعة، مع أسعار تنافسية مقارنة بالمختبرات التقليدية.'
-  ]];
-}
+    {
+        return [
+            [
+                'question' => 'ما هو لازورد',
+                'answer' => 'لازورد هو مختبر الأسنان الرقمي الرائد الذي يتيح لعيادات طب الأسنان التواصل الفوري مع المختبر وتتبع الحالات وإتمام الطلبات بشكل رقمي بالكامل.'
+            ],
+            [
+                'question' => 'ما هي فوائد طب الأسنان الرقمي',
+                'answer' => 'يوفر طب الأسنان الرقمي دقة أعلى في التصاميم، وأوقات تسليم أسرع، وتحسين التواصل بين العيادة والمختبر، وتجربة أفضل للمريض.'
+            ],
+            [
+                'question' => 'ما هي مختبر الأسنان الرقمي',
+                'answer' => 'مختبر الأسنان الرقمي هو مرفق متخصص يستخدم أحدث التقنيات الرقمية مثل طباعة ثلاثية الأبعاد والتصميم الحاسوبي لإنتاج ترميمات أسنان عالية الجودة.'
+            ],
+            [
+                'question' => 'ما هي سير العمل المبتكرة التي تقدمها لازورد',
+                'answer' => 'تقدم لازورد سير عمل رقمية متكاملة تشمل المسح الضوئي، والتصميم الرقمي، والموافقة عبر الإنترنت، وتتبع الحالات في الوقت الفعلي.'
+            ],
+            [
+                'question' => 'ما هي منتجات مختبر الأسنان التي تقدمها لازورد',
+                'answer' => 'تقدم لازورد مجموعة واسعة من المنتجات تشمل تيجان الزركونيا، وحلول رعاية الأسنان الشاملة، وأطقم الأسنان ذات الموعد الثاني، وأجهزة علاج انقطاع التنفس، وتقويم الأسنان الشفاف، والواليات الليلية المطبوعة بتقنية ثلاثية الأبعاد.'
+            ],
+            [
+                'question' => 'كيف يتم مقارنة لازورد مع مختبرات الأسنان الأخرى',
+                'answer' => 'تتميز لازورد بتقديم نظام رقمي متكامل، وسرعة تسليم لا مثيل لها، ودعم متخصص على مدار الساعة، مع أسعار تنافسية مقارنة بالمختبرات التقليدية.'
+            ]
+        ];
+    }
 
     public function index()
     {
@@ -305,36 +306,36 @@ class LazordController extends Controller
 
 
     public function loginSubmit(Request $request)
-{
-    $validated = $request->validate([
-        'email' => 'required|email',
-        'password' => 'required|min:6'
-    ]);
+    {
+        $validated = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6'
+        ]);
 
-    // Admin
-    if ($validated['email'] === 'admin@lazord.com') {
-        $user = User::where('email', 'admin@lazord.com')->first();
+        // Admin
+        if ($validated['email'] === 'admin@lazord.com') {
+            $user = User::where('email', 'admin@lazord.com')->first();
 
-        if ($user && password_verify($validated['password'], $user->password)) {
-            Auth::login($user);
-            return redirect()->route('lazord.admin.dashboard');
+            if ($user && password_verify($validated['password'], $user->password)) {
+                Auth::login($user);
+                return redirect()->route('lazord.admin.dashboard');
+            }
+            return back()->withErrors(['email' => 'بيانات المدير غير صحيحة']);
         }
-        return back()->withErrors(['email' => 'بيانات المدير غير صحيحة']);
+
+        // Doctor
+        $user = User::firstOrCreate(
+            ['email' => $validated['email']],
+            [
+                'password' => bcrypt($validated['password']),
+                'name' => explode('@', $validated['email'])[0],
+                'role' => 'doctor'  // ✅ مستخدم جديد = doctor
+            ]
+        );
+
+        Auth::login($user);
+        return redirect()->route('lazord.dashboard');
     }
-
-    // Doctor
-    $user = User::firstOrCreate(
-        ['email' => $validated['email']],
-        [
-            'password' => bcrypt($validated['password']),
-            'name' => explode('@', $validated['email'])[0],
-            'role' => 'doctor'  // ✅ مستخدم جديد = doctor
-        ]
-    );
-
-    Auth::login($user);
-    return redirect()->route('lazord.dashboard');
-}
 
 
     public function contactSubmit(Request $request)
